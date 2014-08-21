@@ -488,8 +488,17 @@ public class HierarchyPresenter extends Controller implements HierarchyView.Pres
             try{
                 this.finishedExpandingPath(this.loadedDiagram, this.selectedDatabaseObject);
             }catch (Exception ex){
-                Console.error(getClass() + ": No ancestors path found through the loaded diagram.");
-                throw new Exception(getClass() + ": No ancestors path found through the loaded diagram", ex);
+                //get all the necessary data
+                Path newPath = ancestors.get(0);
+                Pathway diagram = newPath.getLastPathwayWithDiagram();
+                Event event = (Event) newPath.get(newPath.size() - 1);
+                /*do not use newPath.getLastPathway(); here because it does not seem to work properly*/
+
+                //highlight/select new Path, also clears current highlighting
+                eventSelected(newPath, diagram, event);
+
+//                Console.error(getClass() + ": No ancestors path found through the loaded diagram.");
+//                throw new Exception(getClass() + ": No ancestors path found through the loaded diagram", ex);
             }
         }
     }
