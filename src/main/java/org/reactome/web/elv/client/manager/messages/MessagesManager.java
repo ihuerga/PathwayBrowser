@@ -17,11 +17,11 @@ public class MessagesManager extends Controller {
         super(eventBus);
     }
 
-    @Override
-    public void onStateManagerWrongStateReached(String token) {
-        //ToDo: Check if still in use?
-        DialogBoxFactory.alert("URL Token error", token + " is not build properly. Please check it complies with the format");
-    }
+//    @Override
+//    public void onStateManagerWrongStateReached(String token) {
+//        //ToDo: Remove?
+//        DialogBoxFactory.alert("URL Token error", token + " is not build properly. Please check it complies with the format");
+//    }
 
     @Override
     public void onAnalysisError(AnalysisErrorEvent event) {

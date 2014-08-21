@@ -221,9 +221,9 @@ public abstract class Controller implements ELVEventHandler {
             case STATE_MANAGER_TOOLS_INITIAL_STATE:
                 onStateManagerToolsInitialStateReached();
                 break;
-            case STATE_MANAGER_WRONG_STATE:
-                onStateManagerWrongStateReached((String) obj);
-                break;
+//            case STATE_MANAGER_WRONG_STATE://ToDo: No longer in use, see also MessageManager
+//                onStateManagerWrongStateReached((String) obj);
+//                break;
 
                     /* TOUR MANAGER EVENTS */
             case TOUR_MANAGER_TOUR_CANCELLED:
@@ -319,13 +319,13 @@ public abstract class Controller implements ELVEventHandler {
     public void onStateManagerDatabaseObjectsRequired(Long pathwayId, Long databaseObjectId){}
     public void onStateManagerDatabaseObjectsSelected(List<Event> path, Pathway pathway, DatabaseObject databaseObject){}
     public void onStateManagerDetailsTabSelected(DetailsTabType tab){}
-    public void onStateManagerError(String message){}
+//    public void onStateManagerError(String message){}
     public void onStateManagerInstancesInitialStateReached(){}
     public void onStateManagerSpeciesSelected(Species species){}
     public void onStateManagerTargetReached(){}
     public void onStateManagerToolSelected(CenterToolType tool){}
     public void onStateManagerToolsInitialStateReached(){}
-    public void onStateManagerWrongStateReached(String token){}
+//    public void onStateManagerWrongStateReached(String token){}
 
     /* TOUR MANAGER EVENTS */
     public void onTourManagerTourCancelled(){}
